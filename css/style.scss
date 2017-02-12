@@ -1,0 +1,422 @@
+/*-----------------------------------------------------------
+
+    初期設定
+
+-----------------------------------------------------------*/
+@charset 'UTF-8';
+//@import "compass";
+
+//Google Fonts用のCSSを読み込み
+@import 'https://fonts.googleapis.com/css?family=Abel';
+
+html {
+    //ベースとなるフォントサイズの定義
+    font-size: 62.5%;
+}
+
+body {
+    font-family      : '游ゴシック', YuGothic, 'メイリオ', Verdana,
+                      'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    font-size        : 1.4rem;
+    line-height      : 1.6;
+    letter-spacing   : .1em;
+    color            : #4c4c4c;
+    background-color : #ffffff;
+}
+
+/*    レスポンシブ
+-----------------------------------------------------------*/
+$mobile : "(max-width:768px)";
+$tablet : "(min-width:769px) and (max-width:1024px)";
+$desktop: "(min-width:769px)";
+
+/*下記はのちの拡張のために残しておく 
+    "(min-width:1025px)";
+    使い方）@media #{$desktop} {
+*/
+
+.clearfix:after
+{
+    content: "";
+    clear: both;
+    display: block;
+ }
+
+
+/*-----------------------------------------------------------
+
+    ヘッダ（自己紹介）エリア
+    
+-----------------------------------------------------------*/
+/* SP view */
+header{
+    /*ナビケーション*/
+    #navi{
+        background: black;
+
+        /*ページタイトル*/
+        #logo{
+            display    : inline-block;
+            width      : 50%;
+            float      : left;
+            font-size  : 3.0rem;
+            color      : #ffffff;
+            background : black;
+            span{
+                margin-left: 2%;
+            }
+       }
+        
+        /*ハンバーガーメニューボタン*/ 
+        #sp_menu_btn {
+            display       : inline-block;
+            width         : 50%;
+            float         : right;
+            color         : #ffffff;
+            font-size     : 3.0rem;
+            background    : black;
+            text-align    : right;
+            i{
+                padding-right: 2%;
+            }
+        }
+        
+        /*ハンバーガーの中身*/ 
+        #sp_navi_menu {
+            display       : none;
+            background    : rgba(204,204,204,0.5);
+            position      : absolute;
+            z-index       : 100;
+            right         : 0;
+            top           : 48px;
+            width         : 100%;
+            
+            li {
+                border-bottom: 1px #ffffff solid;
+                
+                /*クリックした時の動作*/
+                &:active {
+                    background-color: #FFA418;
+                }
+                
+                a {
+                    text-decoration: none;
+                    color          : #ffffff;
+                    font-size      : 2.2rem;
+                }
+            }
+        }
+    }
+    
+    /*カルーセルの編集*/
+    #banner {
+        .item-owl {
+            height          : 500px;
+            width           : 100%;
+            background-size : cover;
+        }
+        #image01 {
+            background-image     : url('../images/profile_pic.jpg');
+        }
+        #image02 {
+            background-image     : url('../images/f1.jpg');
+        }
+        #image03 {
+            background-image     : url('../images/f1_2.jpg');
+            background-position  : 50% 50%;
+        }
+    }
+}
+
+/* PC view */
+@media #{ $desktop } {
+    header{
+        #navi{
+            #logo{
+                width: 35%;
+            }
+            #sp_menu_btn{
+                display: none;
+            }
+            #sp_navi_menu{
+                display: block;
+                background: black;
+                top: 0;
+                width: 65%;
+                text-align: right;
+                li{
+                    border-bottom: 0;
+                    display: inline-block;
+                    font-size: 3.0rem;
+                    margin-right: 4%;
+                    
+                    a{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        #banner{
+            div img{
+                height: 800px;
+            }
+        }
+    }
+}
+
+/*-----------------------------------------------------------
+
+    メイン（アバウト、スキル、実績、コンタクト）エリア
+
+-----------------------------------------------------------*/
+
+
+/*    共通書式
+-----------------------------------------------------------*/
+main{
+    section{
+        padding: 60px 0 0;
+        .kyotsu{
+            margin-left:  auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        
+        //エリア内の見出しを32pxで揃える
+        h2{
+            font-size          : 3.2rem;
+            margin-bottom      : 60px;
+            color              : #4c4c4c;
+            text-align         : center;
+        }
+    }
+}
+/*    アバウトエリア
+-----------------------------------------------------------*/
+/* SP view */
+#about{
+    #profile_pic{
+        img{
+            width: 100%;
+        }
+    }
+    //名前のふりがなの編集
+    p{
+        text-align: left;
+        font-size: 1.6rem;
+        ruby-align: start;
+        rt{
+            font-size: 1.0rem;
+        }
+    }
+}
+
+/* PC view */
+@media #{ $desktop } {
+    #about{
+        #profile_pic{
+            width: 50%;
+            float: left;
+            width: calc(50% - 50px);
+            padding: 25px;
+        }
+        #comment{
+            width: 50%;
+            float: right;
+            line-height: 3.0;
+            font-size: 1.8rem;
+            width: calc(50% - 50px);
+            padding: 25px;
+        }
+    }
+}
+/*    スキルエリア
+-----------------------------------------------------------*/
+/* SP view */
+#skills{
+    clear: both;
+    //各スキルを並べる
+    .kyotsu{
+        display             : flex;
+        justify-content     : space-between;
+        flex-direction      : column;
+        .skill-box{
+            box-sizing            : border-box;
+            flex                  : 1;
+            padding               : 20px;
+            border-radius         : 4px;
+            
+            //スキルアイコンのデザイン設定
+            i{
+                font-size            : 6.5rem;
+                
+                //ボックスの用意
+                box-sizing           : border-box;
+                width                : 80px;
+                height               : 80px;
+                margin-bottom        : 5px;
+                padding-top          : 10px;
+                text-align           : center;
+                color                : #fffaf0;
+                
+                //ボックスの角を丸める
+                border-radius        : 50%;
+                background-color     : #FFA418;
+            }
+            
+            /*スキル名の書式*/
+            h3{
+                font-size      : 2.4rem;
+                font-weight    : bold;
+                margin-bottom  : 10px;
+                color          : #FFA418;
+            }
+            p{
+                text-align: left;
+            }
+            
+            /*アイコンフォントの位置微調整*/
+            #commu i{
+                padding-top: 8.0px; 
+                padding-left: 1.0px;
+            }
+            #manage i{
+                font-size: 5.3rem;
+                padding-top: 12.5px;
+                padding-left: 4.8px;
+            }
+        }
+    }
+}
+
+/* PC view */
+@media #{ $desktop } {
+    #skills{
+        .kyotsu{
+            flex-direction: row;
+            .skill-box{
+                p{
+                    font-size  : 1.8rem;
+                    line-height: 1.8;
+                }
+            }
+        }
+    }
+}
+/*    実績エリア
+-----------------------------------------------------------*/
+/* SP view */
+#works{
+    padding-bottom: 0;
+    h2{
+        margin-bottom: 50px;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+    }
+    .works-box{
+        a{
+            position  : relative;
+            display   : block;
+            &:active{
+                opacity: 0.3;
+            }
+            //画像
+            img{
+                display  : block;
+                width    : 100%;
+            }
+            .works-box-inner{
+                display: none;
+            }
+        }
+    }
+}
+
+/* PC view */
+@media #{ $desktop } {
+    #works {
+        ul {
+            flex-direction: row;
+            .works-box {
+                width: 50%;
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+}
+
+/*    コンタクトエリア
+-----------------------------------------------------------*/
+/* SP view */
+#contact ul {
+    margin-top: 60px;
+    text-align: center;
+    li{
+        font-size           : 2.8rem;
+        display             : inline-block;
+        -webkit-box-sizing  : border-box;
+           -moz-box-sizing  : border-box;
+                box-sizing  : border-box;
+        margin-right        : 20px;
+        text-align          : center;
+        vertical-align      : top;
+        &:last-child{
+            margin-right: 0;
+        }
+        a{
+            display               : block;
+            width                 : 50px;
+            height                : 50px;
+            color                 : #fff;
+            background-color      : #FFA418;
+            -webkit-border-radius : 50%;
+            -moz-border-radius    : 50%;
+            border-radius         : 50%;
+            
+            /*アイコンに色変化*/
+            &:hover{
+                background-color: #D15E00;
+                
+            }
+            i{
+                padding-top: 9.0px;
+                margin-left: 2.4px;
+            }
+        }
+    }
+    /*メールアイコンのフォントサイズ変更*/
+    #gmail{
+        font-size: 3.0rem;
+    }
+    
+    /*Githubアイコンのフォントサイズ変更*/
+    #github{
+        font-size: 3.8rem;
+    }
+    /*Facebookアイコンのフォントサイズ変更*/
+    #facebook{
+        font-size: 3.4rem;
+    }
+}
+
+/* PC view */
+@media #{ $desktop } {
+    #contact{
+    }
+}
+
+/*-----------------------------------------------------------
+
+    フッタ（著作権）エリア
+
+-----------------------------------------------------------*/
+/*著作権文の設定*/
+footer{
+    padding: 10px 0;
+    text-align: center;
+    color: #4c4c4c;
+}
