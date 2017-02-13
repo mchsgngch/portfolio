@@ -5,6 +5,8 @@
 
 -----------------------------------------------------------*/
 @import "https://fonts.googleapis.com/css?family=Abel";
+@import "https://fonts.googleapis.com/css?family=Play";
+@import "https://fonts.googleapis.com/css?family=Michroma";
 html {
   font-size: 62.5%; }
 
@@ -34,7 +36,9 @@ body {
 -----------------------------------------------------------*/
 /* SP view */
 header {
-  /*ナビケーション*/ }
+  font-family: "Michroma";
+  /*ナビケーション*/
+  /*カルーセルの編集*/ }
   header #navi {
     background: black;
     /*ページタイトル*/
@@ -77,7 +81,7 @@ header {
           color: #ffffff;
           font-size: 2.2rem; }
   header #banner .item-owl {
-    height: 500px;
+    height: 250px;
     width: 100%;
     background-size: cover; }
   header #banner #image01 {
@@ -107,8 +111,8 @@ header {
       margin-right: 4%; }
       header #navi #sp_navi_menu li a {
         margin: 0; }
-  header #banner div img {
-    height: 800px; } }
+  header #banner .item-owl {
+    height: 500px; } }
 /*-----------------------------------------------------------
 
     メイン（アバウト、スキル、実績、コンタクト）エリア
@@ -116,6 +120,7 @@ header {
 -----------------------------------------------------------*/
 /*    共通書式
 -----------------------------------------------------------*/
+/* SP view */
 main section {
   padding: 60px 0 0; }
   main section .kyotsu {
@@ -123,11 +128,18 @@ main section {
     margin-right: auto;
     text-align: center; }
   main section h2 {
+    font-family: "Michroma";
     font-size: 3.2rem;
     margin-bottom: 60px;
     color: #4c4c4c;
     text-align: center; }
 
+/* PC view */
+@media (min-width: 769px) {
+  main {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto; } }
 /*    アバウトエリア
 -----------------------------------------------------------*/
 /* SP view */
@@ -150,7 +162,7 @@ main section {
   #about #comment {
     width: 50%;
     float: right;
-    line-height: 3.0;
+    line-height: 2.0;
     font-size: 1.8rem;
     width: calc(50% - 50px);
     padding: 25px; } }
@@ -239,8 +251,8 @@ main section {
   margin-top: 60px;
   text-align: center;
   /*メールアイコンのフォントサイズ変更*/
-  /*Githubアイコンのフォントサイズ変更*/
-  /*Facebookアイコンのフォントサイズ変更*/ }
+  /*Githubアイコン調整*/
+  /*Facebookアイコン調整*/ }
   #contact ul li {
     font-size: 2.8rem;
     display: inline-block;
@@ -265,14 +277,19 @@ main section {
       #contact ul li a:hover {
         background-color: #D15E00; }
       #contact ul li a i {
-        padding-top: 9.0px;
+        vertical-align: top;
+        padding-top: 7.0px;
         margin-left: 2.4px; }
   #contact ul #gmail {
     font-size: 3.0rem; }
+    #contact ul #gmail i {
+      padding-top: 9px; }
   #contact ul #github {
     font-size: 3.8rem; }
   #contact ul #facebook {
     font-size: 3.4rem; }
+    #contact ul #facebook i {
+      padding-top: 9px; }
 
 /* PC view */
 /*-----------------------------------------------------------

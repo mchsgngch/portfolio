@@ -4,10 +4,12 @@
 
 -----------------------------------------------------------*/
 @charset 'UTF-8';
-//@import "compass";
+@import "compass";
 
 //Google Fonts用のCSSを読み込み
 @import 'https://fonts.googleapis.com/css?family=Abel';
+@import 'https://fonts.googleapis.com/css?family=Play';
+@import "https://fonts.googleapis.com/css?family=Michroma";
 
 html {
     //ベースとなるフォントサイズの定義
@@ -50,6 +52,7 @@ $desktop: "(min-width:769px)";
 -----------------------------------------------------------*/
 /* SP view */
 header{
+    font-family: "Michroma";
     /*ナビケーション*/
     #navi{
         background: black;
@@ -111,7 +114,7 @@ header{
     /*カルーセルの編集*/
     #banner {
         .item-owl {
-            height          : 500px;
+            height          : 250px;
             width           : 100%;
             background-size : cover;
         }
@@ -156,10 +159,8 @@ header{
                 }
             }
         }
-        #banner{
-            div img{
-                height: 800px;
-            }
+        #banner .item-owl {
+            height: 500px;
         }
     }
 }
@@ -173,6 +174,7 @@ header{
 
 /*    共通書式
 -----------------------------------------------------------*/
+/* SP view */
 main{
     section{
         padding: 60px 0 0;
@@ -184,6 +186,7 @@ main{
         
         //エリア内の見出しを32pxで揃える
         h2{
+            font-family        : "Michroma";
             font-size          : 3.2rem;
             margin-bottom      : 60px;
             color              : #4c4c4c;
@@ -191,6 +194,16 @@ main{
         }
     }
 }
+
+/* PC view */
+@media #{ $desktop } {
+    main{
+        width        : 70%;
+        margin-left  : auto;
+        margin-right : auto;
+    }
+}
+    
 /*    アバウトエリア
 -----------------------------------------------------------*/
 /* SP view */
@@ -223,7 +236,7 @@ main{
         #comment{
             width: 50%;
             float: right;
-            line-height: 3.0;
+            line-height: 2.0;
             font-size: 1.8rem;
             width: calc(50% - 50px);
             padding: 25px;
@@ -383,23 +396,30 @@ main{
                 
             }
             i{
-                padding-top: 9.0px;
-                margin-left: 2.4px;
+                vertical-align  : top;
+                padding-top     : 7.0px;
+                margin-left     : 2.4px;
             }
         }
     }
     /*メールアイコンのフォントサイズ変更*/
-    #gmail{
-        font-size: 3.0rem;
+    #gmail {
+        font-size   : 3.0rem;
+        i {
+            padding-top: 9px;
+        }
     }
     
-    /*Githubアイコンのフォントサイズ変更*/
-    #github{
-        font-size: 3.8rem;
+    /*Githubアイコン調整*/
+    #github {
+        font-size   : 3.8rem;
     }
-    /*Facebookアイコンのフォントサイズ変更*/
-    #facebook{
-        font-size: 3.4rem;
+    /*Facebookアイコン調整*/
+    #facebook {
+        font-size   : 3.4rem;
+        i {
+            padding-top: 9px;
+        }
     }
 }
 
