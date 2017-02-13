@@ -7,8 +7,7 @@
 @import "compass";
 
 //Google Fonts用のCSSを読み込み
-@import 'https://fonts.googleapis.com/css?family=Abel';
-@import 'https://fonts.googleapis.com/css?family=Play';
+@import 'https://fonts.googleapis.com/css?family=Ubuntu+Condensed';
 @import "https://fonts.googleapis.com/css?family=Michroma";
 
 html {
@@ -84,7 +83,7 @@ header{
             }
         }
         
-        /*ハンバーガーの中身*/ 
+        /*ハンバーガーの中身(リンク)*/ 
         #sp_navi_menu {
             display       : none;
             background    : rgba(204,204,204,0.5);
@@ -133,27 +132,27 @@ header{
 
 /* PC view */
 @media #{ $desktop } {
-    header{
-        #navi{
-            #logo{
+    header {
+        #navi {
+            #logo {
                 width: 35%;
             }
-            #sp_menu_btn{
+            #sp_menu_btn {
                 display: none;
             }
-            #sp_navi_menu{
-                display: block;
-                background: black;
-                top: 0;
-                width: 65%;
-                text-align: right;
-                li{
-                    border-bottom: 0;
-                    display: inline-block;
-                    font-size: 3.0rem;
-                    margin-right: 4%;
+            #sp_navi_menu {
+                display      : block;
+                background   : black;
+                top          : 0;
+                width        : 65%;
+                text-align   : right;
+                li {
+                    border-bottom    : 0;
+                    display          : inline-block;
+                    font-size        : 3.0rem;
+                    margin-right     : 4%;
                     
-                    a{
+                    a {
                         margin: 0;
                     }
                 }
@@ -175,18 +174,18 @@ header{
 /*    共通書式
 -----------------------------------------------------------*/
 /* SP view */
-main{
-    section{
+main {
+    section {
         padding: 60px 0 0;
-        .kyotsu{
-            margin-left:  auto;
-            margin-right: auto;
-            text-align: center;
+        .kyotsu {
+            margin-left   : auto;
+            margin-right  : auto;
+            text-align    : center;
         }
         
         //エリア内の見出しを32pxで揃える
         h2{
-            font-family        : "Michroma";
+            font-family        : 'Michroma';
             font-size          : 3.2rem;
             margin-bottom      : 60px;
             color              : #4c4c4c;
@@ -197,7 +196,7 @@ main{
 
 /* PC view */
 @media #{ $desktop } {
-    main{
+    main {
         width        : 70%;
         margin-left  : auto;
         margin-right : auto;
@@ -207,60 +206,60 @@ main{
 /*    アバウトエリア
 -----------------------------------------------------------*/
 /* SP view */
-#about{
-    #profile_pic{
-        img{
+#about {
+    #profile_pic {
+        img {
             width: 100%;
         }
     }
     //名前のふりがなの編集
-    p{
-        text-align: left;
-        font-size: 1.6rem;
-        ruby-align: start;
-        rt{
-            font-size: 1.0rem;
+    p {
+        text-align    : left;
+        font-size     : 1.6rem;
+        ruby-align    : start;
+        rt {
+            font-size : 1.0rem;
         }
     }
 }
 
 /* PC view */
 @media #{ $desktop } {
-    #about{
-        #profile_pic{
-            width: 50%;
-            float: left;
-            width: calc(50% - 50px);
-            padding: 25px;
+    #about {
+        #profile_pic {
+            width   : 50%;
+            float   : left;
+            width   : calc(50% - 50px);
+            padding : 25px;
         }
-        #comment{
-            width: 50%;
-            float: right;
-            line-height: 2.0;
-            font-size: 1.8rem;
-            width: calc(50% - 50px);
-            padding: 25px;
+        #comment {
+            width       : 50%;
+            float       : right;
+            line-height : 2.0;
+            font-size   : 1.8rem;
+            width       : calc(50% - 50px);
+            padding     : 25px;
         }
     }
 }
 /*    スキルエリア
 -----------------------------------------------------------*/
 /* SP view */
-#skills{
+#skills {
     clear: both;
     //各スキルを並べる
-    .kyotsu{
+    .kyotsu {
         display             : flex;
         justify-content     : space-between;
         flex-direction      : column;
-        .skill-box{
+        .skill-box {
             box-sizing            : border-box;
-            flex                  : 1;
+            flex                  : 1 1 auto;
             padding               : 20px;
             border-radius         : 4px;
             
             //スキルアイコンのデザイン設定
-            i{
+            i {
                 font-size            : 6.5rem;
                 
                 //ボックスの用意
@@ -279,24 +278,25 @@ main{
             
             /*スキル名の書式*/
             h3{
+                font-family    : 'Ubuntu Condensed';
                 font-size      : 2.4rem;
                 font-weight    : bold;
                 margin-bottom  : 10px;
                 color          : #FFA418;
             }
-            p{
+            p {
                 text-align: left;
             }
             
             /*アイコンフォントの位置微調整*/
-            #commu i{
-                padding-top: 8.0px; 
-                padding-left: 1.0px;
+            #commu i {
+                padding-top   : 8.0px; 
+                padding-left  : 1.0px;
             }
-            #manage i{
-                font-size: 5.3rem;
-                padding-top: 12.5px;
-                padding-left: 4.8px;
+            #manage i {
+                font-size    : 5.3rem;
+                padding-top  : 12.5px;
+                padding-left : 4.8px;
             }
         }
     }
@@ -319,29 +319,26 @@ main{
 /*    実績エリア
 -----------------------------------------------------------*/
 /* SP view */
-#works{
+#works {
     padding-bottom: 0;
-    h2{
+    h2 {
         margin-bottom: 50px;
     }
-    ul{
-        display: flex;
-        flex-direction: column;
+    ul {
+        display         : flex;
+        flex-direction  : column;
     }
-    .works-box{
-        a{
+    .works-box {
+        a {
             position  : relative;
             display   : block;
-            &:active{
+            &:active {
                 opacity: 0.3;
             }
             //画像
-            img{
+            img {
                 display  : block;
                 width    : 100%;
-            }
-            .works-box-inner{
-                display: none;
             }
         }
     }
@@ -353,7 +350,6 @@ main{
         ul {
             flex-direction: row;
             .works-box {
-                width: 50%;
                 &:hover {
                     opacity: 0.6;
                 }
@@ -368,7 +364,7 @@ main{
 #contact ul {
     margin-top: 60px;
     text-align: center;
-    li{
+    li {
         font-size           : 2.8rem;
         display             : inline-block;
         -webkit-box-sizing  : border-box;
@@ -377,10 +373,10 @@ main{
         margin-right        : 20px;
         text-align          : center;
         vertical-align      : top;
-        &:last-child{
+        &:last-child {
             margin-right: 0;
         }
-        a{
+        a {
             display               : block;
             width                 : 50px;
             height                : 50px;
@@ -391,11 +387,11 @@ main{
             border-radius         : 50%;
             
             /*アイコンに色変化*/
-            &:hover{
+            &:hover {
                 background-color: #D15E00;
                 
             }
-            i{
+            i {
                 vertical-align  : top;
                 padding-top     : 7.0px;
                 margin-left     : 2.4px;
@@ -414,6 +410,7 @@ main{
     #github {
         font-size   : 3.8rem;
     }
+    
     /*Facebookアイコン調整*/
     #facebook {
         font-size   : 3.4rem;
@@ -425,7 +422,7 @@ main{
 
 /* PC view */
 @media #{ $desktop } {
-    #contact{
+    #contact {
     }
 }
 
@@ -435,7 +432,7 @@ main{
 
 -----------------------------------------------------------*/
 /*著作権文の設定*/
-footer{
+footer {
     padding: 10px 0;
     text-align: center;
     color: #4c4c4c;

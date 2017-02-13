@@ -4,8 +4,7 @@
     初期設定
 
 -----------------------------------------------------------*/
-@import "https://fonts.googleapis.com/css?family=Abel";
-@import "https://fonts.googleapis.com/css?family=Play";
+@import "https://fonts.googleapis.com/css?family=Ubuntu+Condensed";
 @import "https://fonts.googleapis.com/css?family=Michroma";
 html {
   font-size: 62.5%; }
@@ -43,7 +42,7 @@ header {
     background: black;
     /*ページタイトル*/
     /*ハンバーガーメニューボタン*/
-    /*ハンバーガーの中身*/ }
+    /*ハンバーガーの中身(リンク)*/ }
     header #navi #logo {
       display: inline-block;
       width: 50%;
@@ -128,7 +127,7 @@ main section {
     margin-right: auto;
     text-align: center; }
   main section h2 {
-    font-family: "Michroma";
+    font-family: 'Michroma';
     font-size: 3.2rem;
     margin-bottom: 60px;
     color: #4c4c4c;
@@ -177,7 +176,7 @@ main section {
     flex-direction: column; }
     #skills .kyotsu .skill-box {
       box-sizing: border-box;
-      flex: 1;
+      flex: 1 1 auto;
       padding: 20px;
       border-radius: 4px;
       /*スキル名の書式*/
@@ -194,6 +193,7 @@ main section {
         border-radius: 50%;
         background-color: #FFA418; }
       #skills .kyotsu .skill-box h3 {
+        font-family: 'Ubuntu Condensed';
         font-size: 2.4rem;
         font-weight: bold;
         margin-bottom: 10px;
@@ -233,17 +233,13 @@ main section {
     #works .works-box a img {
       display: block;
       width: 100%; }
-    #works .works-box a .works-box-inner {
-      display: none; }
 
 /* PC view */
 @media (min-width: 769px) {
   #works ul {
     flex-direction: row; }
-    #works ul .works-box {
-      width: 50%; }
-      #works ul .works-box:hover {
-        opacity: 0.6; } }
+    #works ul .works-box:hover {
+      opacity: 0.6; } }
 /*    コンタクトエリア
 -----------------------------------------------------------*/
 /* SP view */
