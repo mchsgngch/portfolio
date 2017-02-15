@@ -23,11 +23,6 @@ body {
     "(min-width:1025px)";
     使い方）@media (min-width:769px) {
 */
-.clearfix:after {
-  content: "";
-  clear: both;
-  display: block; }
-
 /*-----------------------------------------------------------
 
     ヘッダ（自己紹介）エリア
@@ -40,6 +35,8 @@ header {
   /*カルーセルの編集*/ }
   header #navi {
     background: black;
+    overflow: hidden;
+    *zoom: 1;
     /*ページタイトル*/
     /*ハンバーガーメニューボタン*/
     /*ハンバーガーの中身(リンク)*/ }
@@ -153,64 +150,77 @@ main section {
 
 /* PC view */
 @media (min-width: 769px) {
-  #about #profile_pic {
-    width: 50%;
-    float: left;
-    width: calc(50% - 50px);
-    padding: 25px; }
-  #about #comment {
-    width: 50%;
-    float: right;
-    line-height: 2.0;
-    font-size: 1.8rem;
-    width: calc(50% - 50px);
-    padding: 25px; } }
+  #about {
+    overflow: hidden;
+    *zoom: 1; }
+    #about #profile_pic {
+      width: 50%;
+      float: left;
+      width: calc(50% - 50px);
+      padding: 25px; }
+    #about #comment {
+      width: 50%;
+      float: right;
+      line-height: 2.0;
+      font-size: 1.8rem;
+      width: calc(50% - 50px);
+      padding: 25px; } }
 /*    スキルエリア
 -----------------------------------------------------------*/
 /* SP view */
-#skills {
-  clear: both; }
-  #skills .kyotsu {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column; }
-    #skills .kyotsu .skill-box {
+#skills .kyotsu {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  justify-content: space-between; }
+  #skills .kyotsu .skill-box {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding: 20px;
+    /*スキル名の書式*/
+    /*アイコンフォントの位置微調整*/ }
+    #skills .kyotsu .skill-box i {
+      font-size: 6.5rem;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
       box-sizing: border-box;
-      flex: 1 1 auto;
-      padding: 20px;
-      border-radius: 4px;
-      /*スキル名の書式*/
-      /*アイコンフォントの位置微調整*/ }
-      #skills .kyotsu .skill-box i {
-        font-size: 6.5rem;
-        box-sizing: border-box;
-        width: 80px;
-        height: 80px;
-        margin-bottom: 5px;
-        padding-top: 10px;
-        text-align: center;
-        color: #fffaf0;
-        border-radius: 50%;
-        background-color: #FFA418; }
-      #skills .kyotsu .skill-box h3 {
-        font-family: 'Ubuntu Condensed';
-        font-size: 2.4rem;
-        font-weight: bold;
-        margin-bottom: 10px;
-        color: #FFA418; }
-      #skills .kyotsu .skill-box p {
-        text-align: left; }
-      #skills .kyotsu .skill-box #commu i {
-        padding-top: 8.0px;
-        padding-left: 1.0px; }
-      #skills .kyotsu .skill-box #manage i {
-        font-size: 5.3rem;
-        padding-top: 12.5px;
-        padding-left: 4.8px; }
+      width: 80px;
+      height: 80px;
+      margin-bottom: 5px;
+      padding-top: 10px;
+      text-align: center;
+      color: #fffaf0;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      background-color: #FFA418; }
+    #skills .kyotsu .skill-box h3 {
+      font-family: 'Ubuntu Condensed';
+      font-size: 2.4rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #FFA418; }
+    #skills .kyotsu .skill-box p {
+      text-align: left; }
+    #skills .kyotsu .skill-box #commu i {
+      padding-top: 8.0px;
+      padding-left: 1.0px; }
+    #skills .kyotsu .skill-box #manage i {
+      font-size: 5.3rem;
+      padding-top: 12.5px;
+      padding-left: 4.8px; }
 
 /* PC view */
 @media (min-width: 769px) {
   #skills .kyotsu {
+    -webkit-flex-direction: row;
     flex-direction: row; }
     #skills .kyotsu .skill-box p {
       font-size: 1.8rem;
@@ -223,7 +233,9 @@ main section {
   #works h2 {
     margin-bottom: 50px; }
   #works ul {
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: column;
     flex-direction: column; }
   #works .works-box a {
     position: relative;
@@ -237,6 +249,7 @@ main section {
 /* PC view */
 @media (min-width: 769px) {
   #works ul {
+    -webkit-flex-direction: row;
     flex-direction: row; }
     #works ul .works-box:hover {
       opacity: 0.6; } }
@@ -252,8 +265,8 @@ main section {
   #contact ul li {
     font-size: 2.8rem;
     display: inline-block;
-    -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin-right: 20px;
     text-align: center;
@@ -266,8 +279,8 @@ main section {
       height: 50px;
       color: #fff;
       background-color: #FFA418;
-      -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
       border-radius: 50%;
       /*アイコンに色変化*/ }
       #contact ul li a:hover {

@@ -36,13 +36,6 @@ $desktop: "(min-width:769px)";
     使い方）@media #{$desktop} {
 */
 
-.clearfix:after
-{
-    content: "";
-    clear: both;
-    display: block;
- }
-
 
 /*-----------------------------------------------------------
 
@@ -55,6 +48,7 @@ header{
     /*ナビケーション*/
     #navi{
         background: black;
+        @include clearfix;
 
         /*ページタイトル*/
         #logo{
@@ -226,6 +220,7 @@ main {
 /* PC view */
 @media #{ $desktop } {
     #about {
+        @include clearfix;
         #profile_pic {
             width   : 50%;
             float   : left;
@@ -246,24 +241,25 @@ main {
 -----------------------------------------------------------*/
 /* SP view */
 #skills {
-    clear: both;
     //各スキルを並べる
     .kyotsu {
-        display             : flex;
-        justify-content     : space-between;
-        flex-direction      : column;
+        @include          display-flex;
+        @include          flex-direction ( column );
+        justify-content : space-between;
+        
         .skill-box {
-            box-sizing            : border-box;
-            flex                  : 1 1 auto;
-            padding               : 20px;
-            border-radius         : 4px;
+            @include box-sizing    ( border-box );
+            @include flex          ( 1 1 auto );
+            @include border-radius ( 4px );
+            padding  : 20px;
+            
             
             //スキルアイコンのデザイン設定
             i {
                 font-size            : 6.5rem;
                 
                 //ボックスの用意
-                box-sizing           : border-box;
+                @include box-sizing  ( border-box );
                 width                : 80px;
                 height               : 80px;
                 margin-bottom        : 5px;
@@ -272,8 +268,8 @@ main {
                 color                : #fffaf0;
                 
                 //ボックスの角を丸める
-                border-radius        : 50%;
-                background-color     : #FFA418;
+                @include border-radius ( 50% );
+                background-color       : #FFA418;
             }
             
             /*スキル名の書式*/
@@ -306,7 +302,7 @@ main {
 @media #{ $desktop } {
     #skills{
         .kyotsu{
-            flex-direction: row;
+            @include flex-direction ( row );
             .skill-box{
                 p{
                     font-size  : 1.8rem;
@@ -325,8 +321,8 @@ main {
         margin-bottom: 50px;
     }
     ul {
-        display         : flex;
-        flex-direction  : column;
+        @include display-flex;
+        @include flex-direction ( column );
     }
     .works-box {
         a {
@@ -348,7 +344,7 @@ main {
 @media #{ $desktop } {
     #works {
         ul {
-            flex-direction: row;
+            @include flex-direction ( row );
             .works-box {
                 &:hover {
                     opacity: 0.6;
@@ -367,9 +363,7 @@ main {
     li {
         font-size           : 2.8rem;
         display             : inline-block;
-        -webkit-box-sizing  : border-box;
-           -moz-box-sizing  : border-box;
-                box-sizing  : border-box;
+        @include box-sizing ( border-box );
         margin-right        : 20px;
         text-align          : center;
         vertical-align      : top;
@@ -377,14 +371,12 @@ main {
             margin-right: 0;
         }
         a {
-            display               : block;
-            width                 : 50px;
-            height                : 50px;
-            color                 : #fff;
-            background-color      : #FFA418;
-            -webkit-border-radius : 50%;
-            -moz-border-radius    : 50%;
-            border-radius         : 50%;
+            display                : block;
+            width                  : 50px;
+            height                 : 50px;
+            color                  : #fff;
+            background-color       : #FFA418;
+            @include border-radius ( 50% );
             
             /*アイコンに色変化*/
             &:hover {
