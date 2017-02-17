@@ -202,14 +202,18 @@ main {
 /* SP view */
 #about {
     #profile_pic {
+        text-align: center;
         img {
-            width: 100%;
+            max-width              : 100%;
+            @include border-radius ( 50% );
         }
     }
     //名前のふりがなの編集
     p {
         text-align    : left;
-        font-size     : 1.6rem;
+        font-size     : 1.8rem;
+        padding       : 20px;
+        line-height   : 1.8;
         ruby-align    : start;
         rt {
             font-size : 1.0rem;
@@ -230,8 +234,6 @@ main {
         #comment {
             width       : 50%;
             float       : right;
-            line-height : 2.0;
-            font-size   : 1.8rem;
             width       : calc(50% - 50px);
             padding     : 25px;
         }
@@ -282,6 +284,8 @@ main {
             }
             p {
                 text-align: left;
+                font-size      : 1.8rem;
+                line-height    : 1.8;
             }
             
             /*アイコンフォントの位置微調整*/
@@ -303,12 +307,6 @@ main {
     #skills{
         .kyotsu{
             @include flex-direction ( row );
-            .skill-box{
-                p{
-                    font-size  : 1.8rem;
-                    line-height: 1.8;
-                }
-            }
         }
     }
 }

@@ -139,11 +139,18 @@ main section {
 /*    アバウトエリア
 -----------------------------------------------------------*/
 /* SP view */
-#about #profile_pic img {
-  width: 100%; }
+#about #profile_pic {
+  text-align: center; }
+  #about #profile_pic img {
+    max-width: 100%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%; }
 #about p {
   text-align: left;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  padding: 20px;
+  line-height: 1.8;
   ruby-align: start; }
   #about p rt {
     font-size: 1.0rem; }
@@ -161,8 +168,6 @@ main section {
     #about #comment {
       width: 50%;
       float: right;
-      line-height: 2.0;
-      font-size: 1.8rem;
       width: calc(50% - 50px);
       padding: 25px; } }
 /*    スキルエリア
@@ -208,7 +213,9 @@ main section {
       margin-bottom: 10px;
       color: #FFA418; }
     #skills .kyotsu .skill-box p {
-      text-align: left; }
+      text-align: left;
+      font-size: 1.8rem;
+      line-height: 1.8; }
     #skills .kyotsu .skill-box #commu i {
       padding-top: 8.0px;
       padding-left: 1.0px; }
@@ -221,10 +228,7 @@ main section {
 @media (min-width: 769px) {
   #skills .kyotsu {
     -webkit-flex-direction: row;
-    flex-direction: row; }
-    #skills .kyotsu .skill-box p {
-      font-size: 1.8rem;
-      line-height: 1.8; } }
+    flex-direction: row; } }
 /*    実績エリア
 -----------------------------------------------------------*/
 /* SP view */
