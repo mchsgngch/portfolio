@@ -15,7 +15,11 @@ body {
   line-height: 1.6;
   letter-spacing: .1em;
   color: #4c4c4c;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%; }
 
 /*    レスポンシブ
 -----------------------------------------------------------*/

@@ -23,6 +23,12 @@ body {
     letter-spacing   : .1em;
     color            : #4c4c4c;
     background-color : #ffffff;
+    
+    // SPを横向きにした際にフォントサイズが変わるのを防ぐ 
+    -webkit-text-size-adjust : 100%;
+    -moz-text-size-adjust    : none;
+    -ms-text-size-adjust     : 100%;
+    text-size-adjust         : 100%;
 }
 
 /*    レスポンシブ
