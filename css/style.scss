@@ -146,6 +146,9 @@ header{
                     font-size        : 3.0rem;
                     margin-right     : 4%;
                     
+                    &:hover {
+                        background-color: #FFA418;
+                    }
                     a {
                         margin: 0;
                     }

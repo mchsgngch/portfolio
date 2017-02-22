@@ -105,6 +105,8 @@ header {
       display: inline-block;
       font-size: 3.0rem;
       margin-right: 4%; }
+      header #navi #sp_navi_menu li:hover {
+        background-color: #FFA418; }
       header #navi #sp_navi_menu li a {
         margin: 0; }
   header #banner .item-owl {
