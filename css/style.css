@@ -6,6 +6,14 @@
 -----------------------------------------------------------*/
 @import "https://fonts.googleapis.com/css?family=Ubuntu+Condensed";
 @import "https://fonts.googleapis.com/css?family=Michroma";
+/*    配色設定
+-----------------------------------------------------------*/
+/*    レスポンシブ
+-----------------------------------------------------------*/
+/*下記はのちの拡張のために残しておく 
+    "(min-width:1025px)";
+    使い方）@media (min-width:769px) {
+*/
 html {
   font-size: 62.5%; }
 
@@ -21,12 +29,6 @@ body {
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%; }
 
-/*    レスポンシブ
------------------------------------------------------------*/
-/*下記はのちの拡張のために残しておく 
-    "(min-width:1025px)";
-    使い方）@media (min-width:769px) {
-*/
 /*-----------------------------------------------------------
 
     ヘッダ（自己紹介）エリア
@@ -38,7 +40,7 @@ header {
   /*ナビケーション*/
   /*カルーセルの編集*/ }
   header #navi {
-    background: black;
+    background: #000000;
     overflow: hidden;
     *zoom: 1;
     /*ページタイトル*/
@@ -50,7 +52,7 @@ header {
       float: left;
       font-size: 3.0rem;
       color: #ffffff;
-      background: black; }
+      background-color: #000000; }
       header #navi #logo span {
         margin-left: 2%; }
     header #navi #sp_menu_btn {
@@ -59,7 +61,7 @@ header {
       float: right;
       color: #ffffff;
       font-size: 3.0rem;
-      background: black;
+      background: #000000;
       text-align: right; }
       header #navi #sp_menu_btn i {
         padding-right: 2%; }
@@ -100,7 +102,7 @@ header {
     display: none; }
   header #navi #sp_navi_menu {
     display: block;
-    background: black;
+    background: #000000;
     top: 0;
     width: 65%;
     text-align: right; }
@@ -135,13 +137,15 @@ main section {
     margin-bottom: 60px;
     color: #4c4c4c;
     text-align: center; }
+main #skills, main #contact {
+  background-color: #f5f5f5; }
 
 /* PC view */
 @media (min-width: 769px) {
-  main {
-    width: 70%;
+  main section .wrapper {
     margin-left: auto;
-    margin-right: auto; } }
+    margin-right: auto;
+    width: 70%; } }
 /*    アバウトエリア
 -----------------------------------------------------------*/
 /* SP view */
@@ -254,7 +258,9 @@ main section {
       opacity: 0.3; }
     #works .works-box a img {
       display: block;
-      width: 100%; }
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto; }
 
 /* PC view */
 @media (min-width: 769px) {
@@ -320,6 +326,7 @@ main section {
 footer {
   padding: 10px 0;
   text-align: center;
-  color: #4c4c4c; }
+  color: #ffffff;
+  background-color: #000000; }
 
 /*# sourceMappingURL=style.css.map */

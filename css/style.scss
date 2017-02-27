@@ -10,26 +10,13 @@
 @import 'https://fonts.googleapis.com/css?family=Ubuntu+Condensed';
 @import "https://fonts.googleapis.com/css?family=Michroma";
 
-html {
-    //ベースとなるフォントサイズの定義
-    font-size: 62.5%;
-}
 
-body {
-    font-family      : '游ゴシック', YuGothic, 'メイリオ', Verdana,
-                      'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
-    font-size        : 1.4rem;
-    line-height      : 1.6;
-    letter-spacing   : .1em;
-    color            : #4c4c4c;
-    background-color : #ffffff;
-    
-    // SPを横向きにした際にフォントサイズが変わるのを防ぐ 
-    -webkit-text-size-adjust : 100%;
-    -moz-text-size-adjust    : none;
-    -ms-text-size-adjust     : 100%;
-    text-size-adjust         : 100%;
-}
+/*    配色設定
+-----------------------------------------------------------*/
+$base_color   : #ffffff;
+$sub_color    : #000000;
+$accent_color : #FFA418;
+$font_color   : #4c4c4c;
 
 /*    レスポンシブ
 -----------------------------------------------------------*/
@@ -43,6 +30,28 @@ $desktop: "(min-width:769px)";
 */
 
 
+html {
+    //ベースとなるフォントサイズの定義
+    font-size: 62.5%;
+}
+
+body {
+    font-family      : '游ゴシック', YuGothic, 'メイリオ', Verdana,
+                      'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    font-size        : 1.4rem;
+    line-height      : 1.6;
+    letter-spacing   : .1em;
+    color            : #4c4c4c;
+    background-color : $base_color;
+    
+    // SPを横向きにした際にフォントサイズが変わるのを防ぐ 
+    -webkit-text-size-adjust : 100%;
+    -moz-text-size-adjust    : none;
+    -ms-text-size-adjust     : 100%;
+    text-size-adjust         : 100%;
+}
+
+
 /*-----------------------------------------------------------
 
     ヘッダ（自己紹介）エリア
@@ -53,7 +62,7 @@ header{
     font-family: "Michroma";
     /*ナビケーション*/
     #navi{
-        background: black;
+        background: $sub_color;
         @include clearfix;
 
         /*ページタイトル*/
@@ -63,7 +72,7 @@ header{
             float      : left;
             font-size  : 3.0rem;
             color      : #ffffff;
-            background : black;
+            background-color : $sub_color;
             span{
                 margin-left: 2%;
             }
@@ -76,7 +85,7 @@ header{
             float         : right;
             color         : #ffffff;
             font-size     : 3.0rem;
-            background    : black;
+            background    : $sub_color;
             text-align    : right;
             i{
                 padding-right: 2%;
@@ -142,7 +151,7 @@ header{
             }
             #sp_navi_menu {
                 display      : block;
-                background   : black;
+                background   : $sub_color;
                 top          : 0;
                 width        : 65%;
                 text-align   : right;
@@ -195,14 +204,17 @@ main {
             text-align         : center;
         }
     }
+    #skills,#contact{
+        background-color: #f5f5f5;
+    }
 }
 
 /* PC view */
 @media #{ $desktop } {
-    main {
-        width        : 70%;
+    main section .wrapper {
         margin-left  : auto;
         margin-right : auto;
+        width        : 70%;
     }
 }
     
@@ -340,8 +352,10 @@ main {
             }
             //画像
             img {
-                display  : block;
-                width    : 100%;
+                display      : block;
+                width        : 50%;
+                margin-left  : auto;
+                margin-right : auto;
             }
         }
     }
@@ -434,5 +448,6 @@ main {
 footer {
     padding: 10px 0;
     text-align: center;
-    color: #4c4c4c;
+    color: #ffffff;
+    background-color: $sub_color;
 }
