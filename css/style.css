@@ -46,8 +46,7 @@ header {
     overflow: hidden;
     *zoom: 1;
     /*ページタイトル*/
-    /*ハンバーガーメニューボタン*/
-    /*ハンバーガーの中身(リンク)*/ }
+    /*ハンバーガーメニューボタン*/ }
     header #navi #logo {
       display: inline-block;
       width: 50%;
@@ -57,33 +56,35 @@ header {
       background-color: #000000; }
       header #navi #logo span {
         margin-left: 2%; }
-    header #navi #sp_menu_btn {
+    header #navi #sp_menu {
       display: inline-block;
       width: 50%;
       float: right;
-      color: #ffffff;
       font-size: 3.0rem;
       background: #000000;
-      text-align: right; }
-      header #navi #sp_menu_btn i {
+      text-align: right;
+      /*ハンバーガーの中身(リンク)*/ }
+      header #navi #sp_menu i {
+        color: #ffffff;
         padding-right: 2%; }
-    header #navi #sp_navi_menu {
-      display: none;
-      background: rgba(204, 204, 204, 0.5);
-      position: absolute;
-      z-index: 100;
-      right: 0;
-      top: 48px;
-      width: 100%; }
-      header #navi #sp_navi_menu li {
-        border-bottom: 1px #ffffff solid;
-        /*クリックした時の動作*/ }
-        header #navi #sp_navi_menu li:active {
-          background-color: #FFA418; }
-        header #navi #sp_navi_menu li a {
-          text-decoration: none;
-          color: #ffffff;
-          font-size: 2.0rem; }
+      header #navi #sp_menu #sp_navi_menu {
+        display: none;
+        background: rgba(204, 204, 204, 0.5);
+        position: absolute;
+        z-index: 100;
+        right: 0;
+        top: 48px;
+        width: 100%;
+        text-align: left; }
+        header #navi #sp_menu #sp_navi_menu li {
+          border-bottom: 1px #ffffff solid;
+          /*クリックした時の動作*/ }
+          header #navi #sp_menu #sp_navi_menu li:active {
+            background-color: #FFA418; }
+          header #navi #sp_menu #sp_navi_menu li a {
+            color: #ffffff;
+            font-size: 2.0rem;
+            display: block; }
   header #banner .item-owl {
     height: 250px;
     width: 100%;
@@ -100,22 +101,22 @@ header {
 @media (min-width: 769px) {
   header #navi #logo {
     width: 35%; }
-  header #navi #sp_menu_btn {
+  header #navi #sp_menu #sp_menu_btn {
     display: none; }
-  header #navi #sp_navi_menu {
+  header #navi #sp_menu #sp_navi_menu {
     display: block;
     background: #000000;
     top: 0;
     width: 65%;
     text-align: right; }
-    header #navi #sp_navi_menu li {
+    header #navi #sp_menu #sp_navi_menu li {
       border-bottom: 0;
       display: inline-block;
       font-size: 3.0rem;
       margin-right: 2%; }
-      header #navi #sp_navi_menu li:hover {
+      header #navi #sp_menu #sp_navi_menu li:hover {
         background-color: #FFA418; }
-      header #navi #sp_navi_menu li a {
+      header #navi #sp_menu #sp_navi_menu li a {
         margin: 0; }
   header #banner .item-owl {
     height: 500px; } }

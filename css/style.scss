@@ -83,46 +83,46 @@ header{
        }
         
         /*ハンバーガーメニューボタン*/ 
-        #sp_menu_btn {
+        #sp_menu {
             display       : inline-block;
             width         : 50%;
             float         : right;
-            color         : #ffffff;
             font-size     : 3.0rem;
             background    : $sub_color;
             text-align    : right;
             i{
+                color        : #ffffff;
                 padding-right: 2%;
             }
-        }
         
-        /*ハンバーガーの中身(リンク)*/ 
-        #sp_navi_menu {
-            display       : none;
-            background    : rgba(204,204,204,0.5);
-            position      : absolute;
-            z-index       : 100;
-            right         : 0;
-            top           : 48px;
-            width         : 100%;
-            
-            li {
-                border-bottom: 1px #ffffff solid;
+            /*ハンバーガーの中身(リンク)*/ 
+            #sp_navi_menu {
+                display       : none;
+                background    : rgba(204,204,204,0.5);
+                position      : absolute;
+                z-index       : 100;
+                right         : 0;
+                top           : 48px;
+                width         : 100%;
+                text-align    : left;
                 
-                /*クリックした時の動作*/
-                &:active {
-                    background-color: #FFA418;
-                }
-                
-                a {
-                    text-decoration: none;
-                    color          : #ffffff;
-                    font-size      : 2.0rem;
+                li {
+                    border-bottom: 1px #ffffff solid;
+                    
+                    /*クリックした時の動作*/
+                    &:active {
+                        background-color: #FFA418;
+                    }
+                    
+                    a {
+                        color          : #ffffff;
+                        font-size      : 2.0rem;
+                        display        : block;
+                    }
                 }
             }
         }
     }
-    
     /*カルーセルの編集*/
     #banner {
         .item-owl {
@@ -150,26 +150,28 @@ header{
             #logo {
                 width: 35%;
             }
-            #sp_menu_btn {
-                display: none;
-            }
-            #sp_navi_menu {
-                display      : block;
-                background   : $sub_color;
-                top          : 0;
-                width        : 65%;
-                text-align   : right;
-                li {
-                    border-bottom    : 0;
-                    display          : inline-block;
-                    font-size        : 3.0rem;
-                    margin-right     : 2%;
-                    
-                    &:hover {
-                        background-color: #FFA418;
-                    }
-                    a {
-                        margin: 0;
+            #sp_menu {
+                #sp_menu_btn {
+                    display: none;
+                }
+                #sp_navi_menu {
+                    display      : block;
+                    background   : $sub_color;
+                    top          : 0;
+                    width        : 65%;
+                    text-align   : right;
+                    li {
+                        border-bottom    : 0;
+                        display          : inline-block;
+                        font-size        : 3.0rem;
+                        margin-right     : 2%;
+                        
+                        &:hover {
+                            background-color: #FFA418;
+                        }
+                        a {
+                            margin: 0;
+                        }
                     }
                 }
             }
