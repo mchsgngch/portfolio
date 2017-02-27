@@ -227,7 +227,8 @@ main {
 /*    アバウトエリア
 -----------------------------------------------------------*/
 /* SP view */
-#about {
+#about .wrapper {
+    /*プロフィール写真*/ 
     #profile_pic {
         text-align: center;
         img {
@@ -235,12 +236,14 @@ main {
             @include border-radius ( 50% );
         }
     }
-    //名前のふりがなの編集
-    p {
+    /*自己紹介文*/ 
+    #comment {
         text-align    : left;
-        font-size     : 1.8rem;
+        font-size     : 1.6rem;
         padding       : 20px;
         line-height   : 1.8;
+        
+        //名前のふりがなの編集
         ruby-align    : start;
         rt {
             font-size : 1.0rem;
@@ -250,7 +253,7 @@ main {
 
 /* PC view */
 @media #{ $desktop } {
-    #about {
+    #about .wrapper {
         @include clearfix;
         #profile_pic {
             width   : 50%;
@@ -259,6 +262,7 @@ main {
             padding : 25px;
         }
         #comment {
+            font-size   : 1.8rem;
             width       : 50%;
             float       : right;
             width       : calc(50% - 50px);
@@ -311,7 +315,7 @@ main {
             }
             p {
                 text-align: left;
-                font-size      : 1.8rem;
+                font-size      : 1.6rem;
                 line-height    : 1.8;
             }
             
@@ -334,6 +338,9 @@ main {
     #skills{
         .kyotsu{
             @include flex-direction ( row );
+            .skill-box p {
+                font-size: 1.8rem;
+            }
         }
     }
 }

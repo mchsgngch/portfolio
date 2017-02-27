@@ -152,33 +152,37 @@ main #skills, main #contact {
 /*    アバウトエリア
 -----------------------------------------------------------*/
 /* SP view */
-#about #profile_pic {
-  text-align: center; }
-  #about #profile_pic img {
-    max-width: 100%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%; }
-#about p {
-  text-align: left;
-  font-size: 1.8rem;
-  padding: 20px;
-  line-height: 1.8;
-  ruby-align: start; }
-  #about p rt {
-    font-size: 1.0rem; }
+#about .wrapper {
+  /*プロフィール写真*/
+  /*自己紹介文*/ }
+  #about .wrapper #profile_pic {
+    text-align: center; }
+    #about .wrapper #profile_pic img {
+      max-width: 100%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%; }
+  #about .wrapper #comment {
+    text-align: left;
+    font-size: 1.6rem;
+    padding: 20px;
+    line-height: 1.8;
+    ruby-align: start; }
+    #about .wrapper #comment rt {
+      font-size: 1.0rem; }
 
 /* PC view */
 @media (min-width: 769px) {
-  #about {
+  #about .wrapper {
     overflow: hidden;
     *zoom: 1; }
-    #about #profile_pic {
+    #about .wrapper #profile_pic {
       width: 50%;
       float: left;
       width: calc(50% - 50px);
       padding: 25px; }
-    #about #comment {
+    #about .wrapper #comment {
+      font-size: 1.8rem;
       width: 50%;
       float: right;
       width: calc(50% - 50px);
@@ -227,7 +231,7 @@ main #skills, main #contact {
       color: #FFA418; }
     #skills .kyotsu .skill-box p {
       text-align: left;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       line-height: 1.8; }
     #skills .kyotsu .skill-box #commu i {
       padding-top: 8.0px;
@@ -241,7 +245,9 @@ main #skills, main #contact {
 @media (min-width: 769px) {
   #skills .kyotsu {
     -webkit-flex-direction: row;
-    flex-direction: row; } }
+    flex-direction: row; }
+    #skills .kyotsu .skill-box p {
+      font-size: 1.8rem; } }
 /*    実績エリア
 -----------------------------------------------------------*/
 /* SP view */
