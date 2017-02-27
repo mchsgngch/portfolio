@@ -128,7 +128,7 @@ header {
 -----------------------------------------------------------*/
 /* SP view */
 main section {
-  padding: 60px 0 0; }
+  padding: 6rem 0 6rem; }
   main section .kyotsu {
     margin-left: auto;
     margin-right: auto;
@@ -244,47 +244,45 @@ main #skills, main #contact {
 /*    実績エリア
 -----------------------------------------------------------*/
 /* SP view */
-#works {
-  padding-bottom: 0; }
-  #works h2 {
-    margin-bottom: 50px; }
-  #works ul {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column; }
-  #works .works-box {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto; }
-    #works .works-box #work01 {
-      position: relative; }
-      #works .works-box #work01 img {
-        width: 100%; }
-      #works .works-box #work01 .inner_box {
-        display: none;
-        width: 100%;
-        height: 100%;
+#works h2 {
+  margin-bottom: 50px; }
+#works ul {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column; }
+#works .works-box {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto; }
+  #works .works-box #work01 {
+    position: relative; }
+    #works .works-box #work01 img {
+      width: 100%; }
+    #works .works-box #work01 .inner_box {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      background-color: rgba(51, 51, 51, 0.4); }
+      #works .works-box #work01 .inner_box p {
         position: absolute;
         top: 0;
-        background-color: rgba(51, 51, 51, 0.4); }
-        #works .works-box #work01 .inner_box p {
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          height: 14%;
-          margin: auto;
-          text-align: center;
-          color: #ffffff;
-          font-size: 3.0rem;
-          font-family: 'Michroma'; }
-      #works .works-box #work01 .site_name {
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 14%;
+        margin: auto;
         text-align: center;
-        color: #4c4c4c; }
-      #works .works-box #work01:active {
-        opacity: 0.3; }
+        color: #ffffff;
+        font-size: 3.0rem;
+        font-family: 'Michroma'; }
+    #works .works-box #work01 .site_name {
+      text-align: center;
+      color: #4c4c4c; }
+    #works .works-box #work01:active {
+      opacity: 0.3; }
 
 /* PC view */
 @media (min-width: 769px) {
