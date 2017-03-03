@@ -253,51 +253,58 @@ main #skills, main #contact {
 /* SP view */
 #works h2 {
   margin-bottom: 50px; }
-#works ul {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column; }
-#works .works-box {
+#works #work_containar .works-box {
+  margin: 10px;
   width: 50%;
-  margin-left: auto;
-  margin-right: auto; }
-  #works .works-box #work01 {
-    position: relative; }
-    #works .works-box #work01 img {
-      width: 100%; }
-    #works .works-box #work01 .inner_box {
-      display: none;
-      width: 100%;
-      height: 100%;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto; }
+  #works #work_containar .works-box a {
+    display: block; }
+  #works #work_containar .works-box img {
+    width: 100%;
+    height: 150px; }
+  #works #work_containar .works-box .inner_box {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(51, 51, 51, 0.4); }
+    #works #work_containar .works-box .inner_box p {
       position: absolute;
       top: 0;
-      background-color: rgba(51, 51, 51, 0.4); }
-      #works .works-box #work01 .inner_box p {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        height: 14%;
-        margin: auto;
-        text-align: center;
-        color: #ffffff;
-        font-size: 3.0rem;
-        font-family: 'Michroma'; }
-    #works .works-box #work01 .site_name {
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 14%;
+      margin: auto;
       text-align: center;
-      color: #4c4c4c; }
-    #works .works-box #work01:active {
-      opacity: 0.3; }
+      color: #ffffff;
+      font-size: 3.0rem;
+      font-family: 'Michroma'; }
+  #works #work_containar .works-box .site_name {
+    text-align: center;
+    color: #4c4c4c; }
+  #works #work_containar .works-box:active {
+    opacity: 0.3; }
 
 /* PC view */
 @media (min-width: 769px) {
-  #works ul {
-    -webkit-flex-direction: row;
-    flex-direction: row; }
-    #works ul .works-box #work01:hover .inner_box {
-      display: inline; } }
+  #works #work_containar {
+    overflow: hidden;
+    *zoom: 1; }
+    #works #work_containar .works-box {
+      float: left;
+      width: calc(50% - 20px);
+      margin-right: 10px;
+      margin-left: 10px;
+      display: inline-block; }
+      #works #work_containar .works-box:hover .inner_box {
+        display: inline; }
+      #works #work_containar .works-box img {
+        height: 200px; } }
 /*    コンタクトエリア
 -----------------------------------------------------------*/
 /* SP view */
